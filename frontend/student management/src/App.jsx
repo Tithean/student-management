@@ -1,7 +1,7 @@
 import Sidebar from "./components/Sidebar";
 import StatCards from "./components/StatCards";
 import StudentTable from "./components/students/student_table/StudentTable.jsx";
-import AddStudentModal from "./components/students/student_form/AddStudentModal.jsx";
+import AddStudentModal from "./components/students/student_form/HandleStudentModal.jsx";
 import PageHeader from "./components/PageHeader";
 import LoadingState from "./components/LoadingState";
 import { useStudents } from "./hooks/useStudents.jsx";

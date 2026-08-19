@@ -37,7 +37,7 @@ function AddStudentModal({ student, onClose, onSubmit }) {
       onClick={onClose}
     >
       <div
-        className="w-full max-w-110 rounded-[18px] bg-white px-7 py-6.5 shadow-[0_24px_60px_rgba(13,63,116,0.22)]"
+        className="w-full max-w-110 bg-white border-r-8 border-[#12304d] px-7 py-6.5 shadow-[0_24px_60px_rgba(13,63,116,0.22)]"
         onClick={(event) => event.stopPropagation()}
       >
         <h2 className="mb-1 text-xl font-bold text-[#12304d]">
@@ -46,7 +46,7 @@ function AddStudentModal({ student, onClose, onSubmit }) {
         <p className="mb-5 text-[13px] text-[#5d6e8c]">
           {isEditing
             ? "Update the student details."
-            : "Fill in the details to register a new student."}
+            : "Fill the student details"}
         </p>
 
         <form onSubmit={handleSubmit}>

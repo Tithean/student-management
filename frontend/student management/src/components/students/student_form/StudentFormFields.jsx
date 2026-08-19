@@ -1,4 +1,4 @@
-import { GENDERS } from "../../../config/students";
+const GENDERS = ["Male", "Female"];
 
 function StudentFormFields({ form, errors, onChange }) {
   return (
@@ -6,7 +6,8 @@ function StudentFormFields({ form, errors, onChange }) {
       <label className="mb-3.5 flex flex-col gap-1.5">
         <span className="text-[13px] font-semibold text-[#1f3d5f]">Name</span>
         <input
-          className="h-10.5 rounded-[10px] border border-[#dfeaf9] bg-white px-3 text-sm text-[#12304d] outline-none focus:border-[#0d4fa3] focus:ring-4 focus:ring-blue-100"
+          className="h-10.5 border border-[#12304d] bg-white px-3 text-sm text-[#12304d] outline-none focus:border-[#12304d] focus:ring-4 focus:ring-blue-100"
+          placeholder="Student name"
           type="text"
           value={form.name}
           onChange={onChange("name")}
@@ -43,7 +44,7 @@ function StudentFormFields({ form, errors, onChange }) {
           Date of birth
         </span>
         <input
-          className="h-10.5 rounded-[10px] border border-[#dfeaf9] bg-white px-3 text-sm text-[#12304d] outline-none focus:border-[#0d4fa3] focus:ring-4 focus:ring-blue-100"
+          className="h-10.5 border border-[#12304d] bg-white px-3 text-sm text-[#12304d] outline-none focus:border-[#12304d] focus:ring-4 focus:ring-blue-100"
           type="date"
           value={form.dob}
           onChange={onChange("dob")}

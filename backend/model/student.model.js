@@ -1,13 +1,14 @@
 const pool = require("../config/db");
 
 const createStudent = async (studentData) => {
-  const { name, age, gender } = studentData;
+  const { name, gender, dob } = studentData;
   const queryText = `
-    INSERT INTO student (name, age, gender) 
-    VALUES ($1, $2, $3) 
+    INSERT INTO student (id, name, gender, dob, attendence)
+    SELECT GREATEST(COALESCE(MAX(id), 1000), 1000) + 1, $1, $2, $3, 0
+    FROM student
     RETURNING *;
   `;
-  const values = [name, age, gender];
+  const values = [name, gender, dob];
 
   const result = await pool.query(queryText, values);
   return result.rows[0];
@@ -33,16 +34,17 @@ const getStudentById = async (id) => {
 };
 
 const updateStudent = async (id, updateData) => {
-  const { name, age, gender } = updateData;
+  const { name, gender, dob, attendence } = updateData;
   const queryText = `
     UPDATE student 
     SET name = COALESCE($2, name), 
-        age = COALESCE($3, age), 
-        gender = COALESCE($4, gender)
+        gender = COALESCE($3, gender),
+        dob = COALESCE($4, dob),
+        attendence = COALESCE($5, attendence)
     WHERE id = $1
     RETURNING *;
   `;
-  const values = [id, name, age, gender];
+  const values = [id, name, gender, dob, attendence];
   const result = await pool.query(queryText, values);
   return result.rows[0];
 };

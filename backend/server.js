@@ -7,16 +7,14 @@ const express = require("express");
 const studentRoutes = require("./routes/crud.route");
 
 const app = express();
-app.use(
-  cors({
-    origin: `http://127.0.0.1:${PORT}`,
-    credentials: true,
-  }),
-);
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("hello");
+  res.status(201).json({
+    success: true,
+    message: "Welcome"
+  })
 });
 
 app.use("/students", studentRoutes);

@@ -23,7 +23,7 @@ function App() {
     recordAttendance,
     openAddModal,
     openEditModal,
-    closeModal,
+    handleCloseModal,
   } = useStudents();
 
   return (
@@ -63,7 +63,7 @@ function App() {
         <AddStudentModal
           key={editingStudent?.id ?? "new"}
           student={editingStudent}
-          onClose={closeModal}
+          onClose={handleCloseModal}
           onSubmit={editingStudent ? editStudent : addStudent}
         />
       )}

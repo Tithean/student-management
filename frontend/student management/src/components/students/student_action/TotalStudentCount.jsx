@@ -1,4 +1,4 @@
-function StatCards({ students }) {
+function StudentStat({ students }) {
   const total = students.length;
   return (
     <section className="mt-4 flex flex-col items-end gap-1.5 text-md text-[#5d6e8c]">
@@ -9,4 +9,4 @@ function StatCards({ students }) {
   );
 }
 
-export default StatCards;
+export default StudentStat;

@@ -1,4 +1,6 @@
-const NAV_ITEMS = [{ id: "students", label: "Students" }];
+const NAV_ITEMS = [
+  { id: "students", label: "Students" },
+];
 
 function Sidebar({ active = "students", onSelect }) {
   return (
@@ -10,12 +12,12 @@ function Sidebar({ active = "students", onSelect }) {
         <div className="mt-1 text-xl font-bold text-white">Admin</div>
       </div>
 
-      <nav className="flex flex-1 flex-col gap-1">
+      <nav className="flex flex-1 flex-col">
         {NAV_ITEMS.map((item) => (
           <button
             key={item.id}
             type="button"
-            className={`flex w-full items-center px-4 py-[11px] text-left text-[15px] font-medium transition cursor-pointer hover:bg-[#eef5ff] ${item.id === active ? "bg-white text-[#12304d] shadow-sm" : "text-[#12304d] hover:bg-[#c0dbff]"}`}
+            className={`flex w-full bg-white border border-[#12304d] items-center px-4 py-[11px] text-left text-[15px] font-medium transition cursor-pointer hover:bg-[#eef5ff] ${item.id === active ? "bg-white text-[#12304d] shadow-sm" : "text-[#12304d] hover:bg-[#c0dbff]"}`}
             onClick={() => onSelect?.(item.id)}
           >
             {item.label}

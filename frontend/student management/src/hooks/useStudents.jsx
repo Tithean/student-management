@@ -30,7 +30,7 @@ export function useStudents() {
       .catch(() => {
         if (!cancelled) {
           setError(
-            "Could not load students. Is the backend running on port 8000?",
+            "Could not load students. What port does your server running at?",
           );
         }
       })

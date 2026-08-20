@@ -1,5 +1,5 @@
 import Sidebar from "./components/Sidebar";
-import StatCards from "./components/StatCards";
+import StudentStat from "./components/students/student_action/TotalStudentCount.jsx";
 import StudentTable from "./components/students/student_table/StudentTable.jsx";
 import AddStudentModal from "./components/students/student_form/HandleStudentModal.jsx";
 import PageHeader from "./components/PageHeader";
@@ -56,7 +56,7 @@ function App() {
           />
         )}
 
-        <StatCards students={students} />
+        <StudentStat students={students} />
       </main>
 
       {isModalOpen && (

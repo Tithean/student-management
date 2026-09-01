@@ -21,7 +21,7 @@ app.use("/students", studentRoutes);
 
 const startServer = async () => {
   await db;
-  app.listen(PORT, () => {
+  app.listen(PORT, "0.0.0.0", () => {
     console.log(`http://127.0.0.1:${PORT}`);
   });
 };

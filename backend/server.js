@@ -1,5 +1,6 @@
 require("dotenv").config();
 const PORT = process.env.PORT || 8000;
+const SERVER_HOST = process.env.SERVER_HOST;
 
 const db = require("./config/db");
 const cors = require("cors");
@@ -21,8 +22,8 @@ app.use("/students", studentRoutes);
 
 const startServer = async () => {
   await db;
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`http://127.0.0.1:${PORT}`);
+  app.listen(PORT, SERVER_HOST, () => {
+    console.log(`http://${SERVER_HOST}:${PORT}`);
   });
 };
 
